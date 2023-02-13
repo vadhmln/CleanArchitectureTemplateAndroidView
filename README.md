@@ -23,8 +23,8 @@
 
 # Другие полезные функции
 
-- Эта версия обеспечивает:
-  модульность ([Modularization](https://developer.android.com/topic/modularization))
+Эта версия обеспечивает:
+- модульность ([Modularization](https://developer.android.com/topic/modularization))
 - Управление версиями ([Version catalog](https://docs.gradle.org/current/userguide/platforms.html))
 - Использует  ([Material3](https://m3.material.io/))
 - ([View binding](https://developer.android.com/topic/libraries/view-binding))
