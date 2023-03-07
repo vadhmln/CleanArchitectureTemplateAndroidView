@@ -99,15 +99,7 @@ class NewFeatureFragment : BaseFragment<NewFeatureViewState, NewFeaturePresentat
         }
 
         secondFragmentButton.setOnClickListener {
-            findNavController().navigate(NewFeatureFragmentDirections.actionNewFeatureFragmentToSecondFragment())
-        }
-    }
-
-    companion object {
-        private const val ARGUMENT_RESTAURANT_ID = "UserName"
-
-        fun newInstance(userName: String) = NewFeatureFragment().apply {
-            arguments = bundleOf(ARGUMENT_RESTAURANT_ID to userName)
+            viewModel.onSecondFeatureAction(0)
         }
     }
 

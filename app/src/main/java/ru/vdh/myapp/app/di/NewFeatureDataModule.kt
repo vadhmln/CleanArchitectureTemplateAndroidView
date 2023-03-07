@@ -7,8 +7,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ru.vdh.myapp.newfeature.data.datasource.NewFeatureDataSource
-import ru.vdh.myapp.newfeature.data.mapper.NewFeatureDataModelToDataSourceMapper
-import ru.vdh.myapp.newfeature.data.mapper.NewFeatureDataModelToDomainMapper
+import ru.vdh.myapp.newfeature.data.mapper.NewFeatureDataToDataSourceMapper
+import ru.vdh.myapp.newfeature.data.mapper.NewFeatureDataToDomainMapper
 import ru.vdh.myapp.newfeature.data.repository.NewFeatureRepositoryImpl
 import ru.vdh.myapp.newfeature.datasource.SharedPrefNewFeatureDataSource
 import ru.vdh.myapp.newfeature.domain.repository.NewFeatureRepository
@@ -21,10 +21,10 @@ import javax.inject.Singleton
 class NewFeatureDataModule {
 
     @Provides
-    fun providesNewFeatureDataModelToDomainMapper() = NewFeatureDataModelToDomainMapper()
+    fun providesNewFeatureDataToDomainMapper() = NewFeatureDataToDomainMapper()
 
     @Provides
-    fun providesNewFeatureDataModelToDataSourceMapper() = NewFeatureDataModelToDataSourceMapper()
+    fun providesNewFeatureDataModelToDataSourceMapper() = NewFeatureDataToDataSourceMapper()
 
     @Provides
     fun providesNewFeaturePresentationToDomainMapper() = NewFeaturePresentationToDomainMapper()
@@ -42,11 +42,11 @@ class NewFeatureDataModule {
     @Singleton
     fun provideNewFeatureRepository(
         newFeatureDataSource: NewFeatureDataSource,
-        newFeatureDataModelToDomainMapper: NewFeatureDataModelToDomainMapper,
-        newFeatureDataModelToDataSourceMapper: NewFeatureDataModelToDataSourceMapper
+        newFeatureDataToDomainMapper: NewFeatureDataToDomainMapper,
+        newFeatureDataToDataSourceMapper: NewFeatureDataToDataSourceMapper
     ): NewFeatureRepository = NewFeatureRepositoryImpl(
         newFeatureDataSource = newFeatureDataSource,
-        newFeatureDataModelToDomainMapper,
-        newFeatureDataModelToDataSourceMapper
+        newFeatureDataToDomainMapper,
+        newFeatureDataToDataSourceMapper
     )
 }

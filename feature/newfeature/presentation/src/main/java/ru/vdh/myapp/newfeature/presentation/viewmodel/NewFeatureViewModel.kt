@@ -6,14 +6,14 @@ import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ru.vdh.myapp.core.presentation.viewmodel.BaseViewModel
 import ru.vdh.myapp.core.presentation.viewmodel.usecase.UseCaseExecutorProvider
-import ru.vdh.myapp.newfeature.domain.model.NewFeatureDomainModel
 import ru.vdh.myapp.newfeature.domain.usecase.GetNewFeatureUseCase
 import ru.vdh.myapp.newfeature.domain.usecase.SaveNewFeatureUseCase
+import ru.vdh.myapp.newfeature.presentation.destination.NewFeaturePresentationDestination.SecondFeature
 import ru.vdh.myapp.newfeature.presentation.mapper.NewFeatureDomainToPresentationMapper
 import ru.vdh.myapp.newfeature.presentation.mapper.NewFeaturePresentationToDomainMapper
+import ru.vdh.myapp.newfeature.presentation.model.NewFeaturePresentationModel
 import ru.vdh.myapp.newfeature.presentation.model.NewFeaturePresentationNotification
 import ru.vdh.myapp.newfeature.presentation.model.NewFeatureViewState
-import ru.vdh.myapp.newfeature.presentation.model.NewFeaturePresentationModel
 import javax.inject.Inject
 
 @HiltViewModel
@@ -53,6 +53,7 @@ class NewFeatureViewModel @Inject constructor(
         resultMutableLiveData.value = "${userName.firstName} ${userName.lastName}"
     }
 
-    private fun presentUserDetails(user: NewFeatureDomainModel) =
-        newFeatureDomainToPresentationMapper.toPresentation(user)
+    fun onSecondFeatureAction(id: Int) {
+        navigateTo(SecondFeature(id))
+    }
 }

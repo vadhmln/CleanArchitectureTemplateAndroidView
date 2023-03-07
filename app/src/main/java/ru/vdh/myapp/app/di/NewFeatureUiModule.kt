@@ -7,7 +7,7 @@ import dagger.hilt.android.components.FragmentComponent
 import ru.vdh.myapp.core.ui.mapper.ViewStateBinder
 import ru.vdh.myapp.core.ui.view.ViewsProvider
 import ru.vdh.myapp.newfeature.presentation.model.NewFeatureViewState
-import ru.vdh.myapp.newfeature.ui.binder.UserDetailsViewStateBinder
+import ru.vdh.myapp.newfeature.ui.binder.NewFeatureViewStateBinder
 import ru.vdh.myapp.newfeature.ui.mapper.NewUserNotificationPresentationToUiMapper
 
 @Module
@@ -16,7 +16,7 @@ class NewFeatureUiModule {
 
     @Provides
     @Suppress("UNCHECKED_CAST")
-    fun providesUserDetailsViewStateBinder() = UserDetailsViewStateBinder()
+    fun providesUserDetailsViewStateBinder() = NewFeatureViewStateBinder()
             as ViewStateBinder<NewFeatureViewState, ViewsProvider>
 
     @Provides

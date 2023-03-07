@@ -56,6 +56,12 @@ dependencies {
     implementation project(':feature:newfeature:data')
     implementation project(':feature:newfeature:datasource')
 
+    implementation project(':feature:secondfeature:ui')
+    implementation project(':feature:secondfeature:presentation')
+    implementation project(':feature:secondfeature:domain')
+    implementation project(':feature:secondfeature:data')
+    implementation project(':feature:secondfeature:datasource')
+
     implementation(libs.bundles.android.core)
     implementation(libs.bundles.fragment)
     implementation(libs.kotlinx.coroutines.android)

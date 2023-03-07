@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/nav_feature">
+    app:startDestination="@id/nav_new_feature">
 
     <include
+        android:id="@id/nav_new_feature"
         app:graph="@navigation/nav_new_feature">
     </include>
 
+    <include
+        android:id="@id/nav_second_feature"
+        app:graph="@navigation/nav_second_feature">
+    </include>
+
+    <action
+        android:id="@+id/action_global_to_nav_new_feature"
+        app:destination="@id/nav_new_feature" />
+
+    <action
+        android:id="@+id/action_global_to_nav_second_feature"
+        app:destination="@id/nav_second_feature" />
 
 </navigation>

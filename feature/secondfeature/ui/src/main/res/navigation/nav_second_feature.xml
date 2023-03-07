@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_second_feature"
+    app:startDestination="@id/secondFeatureFragment">
+    <fragment
+        android:id="@+id/secondFeatureFragment"
+        android:name="ru.vdh.myapp.secondfeature.ui.view.SecondFeatureFragment"
+        android:label="fragment_feature_second"
+        tools:layout="@layout/fragment_feature_second" />
+</navigation>
