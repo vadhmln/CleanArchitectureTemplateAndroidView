@@ -14,6 +14,4 @@ class NewFeatureDataSourceImpl(
     override fun get(): NewFeatureDataModel {
         TODO("Not yet implemented")
     }
-
-
 }
